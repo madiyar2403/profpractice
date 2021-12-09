@@ -13,10 +13,11 @@ class Contract(models.Model):
     )
     contract_name = models.CharField(max_length=128)
     contract_type = models.CharField(max_length=128)
+    contract_file = models.FileField(upload_to='uploads/contracts/', blank=True)
 
     class Meta:
         verbose_name = 'Contract'
-        verbose_name_plural = 'Contract'
+        verbose_name_plural = 'Contracts'
 
     def __str__(self):
         return f'{self.student.first_name} {self.student.last_name} {self.contract_name}'
@@ -46,6 +47,7 @@ class Report(models.Model):
     report_name = models.CharField(max_length=128, blank=True, null=True)
     report_type = models.CharField(max_length=128, blank=True, null=True)
     report_description = models.TextField(max_length=2500, null=True, blank=True)
+    report_file = models.FileField(upload_to='uploads/reports/', blank=True)
 
     class Meta:
         verbose_name = 'Report'

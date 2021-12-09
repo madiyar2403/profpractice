@@ -75,7 +75,7 @@ TEMPLATES = [
 JAZZMIN_SETTINGS = {
     "site_title": "Admin",
     "copyright": "Madiyar&darkhan",
-    "site_header": "Admin panel",
+    "site_header": "ProfPractice",
     "welcome_sign": "Welcome to admin panel!",
 
     "topmenu_links": [
@@ -109,6 +109,12 @@ DATABASES = {
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'my_cache_table',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
